@@ -1,18 +1,23 @@
-import { Component, signal } from '@angular/core';
+import { Component, Input, input, signal } from '@angular/core';
+import { Register } from "../account/register/register";
+import { User } from '../../types/user';
+import { required } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [Register],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
 })
 export class Home {
+
+
 protected registerMode = signal(false);
 
-showRegister()
+showRegister(value:boolean)
 {
-  this.registerMode.set(true);
+  this.registerMode.set(value);
 }
 
 

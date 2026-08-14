@@ -11,15 +11,17 @@
             <h1 class="text-5xl font-bold">Find Your Match</h1>
             <p class="py-6">Welcome to the Dating App! SignUP!!!</p>
             <div class="flex items-center gap-3">
-                <button class="btn btn-primary btn-lg" (click)="showRegister()">Register</button>
+                <button class="btn btn-primary btn-lg" (click)="showRegister(true)">Register</button>
                 <button class="btn btn-secondary btn-lg">Learn More</button>
             </div>
         </div>
     </div>
     }
     @else{
-    <div class="text-2xl text-center flex justify-center">
-        <p>Register Form</p>
+    <div class="w-full text-2xl text-center flex justify-center">
+        <app-register class="w-full" 
+       
+        (cancelRegister)="showRegister($event)"></app-register>
     </div>
     }
 </div>

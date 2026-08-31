@@ -3,6 +3,7 @@ using WebApplication1.Data;
 using WebApplication1.Interfaces;
 using WebApplication1.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using WebApplication1.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +35,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 var app = builder.Build();
+app.UseMiddleware<ExceptionMiddleWare>();
+
 app.UseCors(options =>
 {
     options.AllowAnyMethod()

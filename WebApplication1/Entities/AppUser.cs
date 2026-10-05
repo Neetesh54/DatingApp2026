@@ -10,5 +10,9 @@ namespace WebApplication1.Entities
         public required byte[] PasswordHash { get; set; }
 
         public required byte[] PasswordSalt { get; set; }
+        public string? ImageUrl { get; set; }
+
+        //Navigation property       
+        public Member? Member { get; set; }= null!;
     }
 }
